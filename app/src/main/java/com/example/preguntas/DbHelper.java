@@ -88,6 +88,8 @@ public class DbHelper extends SQLiteOpenHelper {
 
 
     public void addAnswer(Respuestas respuesta){
+        this.db = db;
+        db = getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(tablaResultados.COLUMN_QUESTION, respuesta.getPregunta());
         cv.put(tablaResultados.COLUMN_ANSWER, respuesta.getRespuesta());

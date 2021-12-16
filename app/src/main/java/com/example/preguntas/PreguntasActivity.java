@@ -103,6 +103,7 @@ public class PreguntasActivity extends AppCompatActivity {
 
     private void saveAnswer(){
         DbHelper dbhelper = new DbHelper(this);
+        //dbhelper.getWritableDatabase();
         Respuestas respuesta = new Respuestas();
         rbGroup = (RadioGroup) findViewById(R.id.radio_group);
         answered = true;
@@ -110,9 +111,6 @@ public class PreguntasActivity extends AppCompatActivity {
         int selectedId = rbGroup.getCheckedRadioButtonId();
 
         radioButton = (RadioButton) findViewById(selectedId);
-
-        Toast.makeText(PreguntasActivity.this,
-                radioButton.getText(), Toast.LENGTH_SHORT).show();
 
         String questionToAnswer = textViewQuestion.getText().toString();
         String questionAnswer = radioButton.getText().toString();
